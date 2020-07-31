@@ -1,0 +1,4 @@
+web/node_modules/
+backend/node_modules/
+backend/gcbkey.json
+mobile/node_modules/

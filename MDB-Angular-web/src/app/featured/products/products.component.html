@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-4 mx-auto my-5" *ngFor="let el of elements">
+    <!--Card-->
+    <mdb-card dark="true">
+      <div class="thumbnail">
+        <img src="{{ el.image }}" />
+      </div>
+      <!--Card content-->
+      <mdb-card-body class="elegant-color white-text">
+        <mdb-card-text class="white-text">
+          <h5>{{ el.itemName }} -${{ el.price }}</h5>
+          <h5>Qty-{{ el.inventory }}</h5>
+        </mdb-card-text>
+
+        <!-- <hr class="hr-light" /> -->
+        <hr class="hr-dark" />
+
+        <!--Text-->
+        <mdb-card-text class="white-text">
+          <h6>{{ el.detail }}</h6>
+        </mdb-card-text>
+
+        <div>
+          <span>
+            <button
+              mdbBtn
+              type="submit"
+              color="teal"
+              class="z-depth-1 waves-light"
+              [routerLink]="['product', el._id]"
+              [state]="{ item: el }"
+              (click)="editProduct(el._id, el)"
+            >
+              Edit
+            </button>
+          </span>
+
+          <span>
+            <button
+              mdbBtn
+              type="submit"
+              color="teal"
+              rounded="true"
+              class="z-depth-1 waves-light"
+              (click)="deleteProduct(el._id)"
+            >
+              Delete
+            </button>
+          </span>
+        </div>
+      </mdb-card-body>
+      <!--/.Card content-->
+    </mdb-card>
+    <!--/.Card-->
+  </div>
+</div>
+
+<!-- <div
+        class="view overlay waves-light"
+        mdbWavesEffect
+      >
+        <mdb-card-img class="img" src="{{ el.image }}"></mdb-card-img>
+      </div> -->

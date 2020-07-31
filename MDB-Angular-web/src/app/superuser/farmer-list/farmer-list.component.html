@@ -1,0 +1,37 @@
+<div class="accountList">
+  <div>
+    <div>
+      <h3>LIST OF FARMERS ACCOUNTS</h3>
+    </div>
+    <table mdbTable>
+      <thead>
+        <tr>
+          <th class="head" *ngFor="let head of farmerElements" scope="col">
+            {{ head }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let el of farmers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ el.companyname }}</td>
+          <td>{{ el.owner }}</td>
+          <td>{{ el.email }}</td>
+          <td>{{ el.active }}</td>
+
+          <button
+            mdbBtn
+            type="submit"
+            gradient="blue"
+            rounded="true"
+            [routerLink]="['resetpassword']"
+            [state]="{ userdata: el }"
+            mdbWavesEffect
+          >
+            RESET
+          </button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

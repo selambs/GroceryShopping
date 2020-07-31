@@ -1,0 +1,53 @@
+<header class="h-100">
+  <mdb-navbar
+    SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav"
+    [containerInside]="false"
+  >
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand">
+        <strong>covid-19 Fresh Shopping</strong>
+      </a>
+    </mdb-navbar-brand>
+    <links>
+      <div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active waves-light" mdbWavesEffect>
+            <a class="nav-link"
+              >Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['superuser', 'farmers']"
+              >Farmers Account List</a
+            >
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['superuser', 'customers']"
+              >Customers Account List</a
+            >
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['user', 'transactions']"
+              >Transactions</a
+            >
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['superuser', 'logfile']"
+              >Log File</a
+            >
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </links>
+  </mdb-navbar>
+</header>
+
+<router-outlet></router-outlet>

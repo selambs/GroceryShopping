@@ -1,0 +1,59 @@
+<header class="h-100">
+  <mdb-navbar
+    SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav"
+    [containerInside]="false"
+  >
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand">
+        <strong>covid-19 Fresh Shopping</strong>
+      </a>
+    </mdb-navbar-brand>
+    <links>
+      <div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active waves-light" mdbWavesEffect>
+            <a class="nav-link"
+              >Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['farmer']">Products</a>
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['farmer', 'product']"
+              >Add Products</a
+            >
+          </li>
+          
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" [routerLink]="['farmer', 'orders']">Orders</a>
+          </li>
+
+          <li class="nav-item dropdown btn-group" dropdown>
+            <a
+              dropdownToggle
+              type="button"
+              class="nav-link dropdown-toggle waves-light"
+              mdbWavesEffect
+            >
+              My Account
+            </a>
+            <div
+              class="dropdown-menu dropdown-primary dropdown-menu-right"
+              role="menu"
+            >
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" [routerLink]="['farmer', 'resetpassword']">Reset Password</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </links>
+  </mdb-navbar>
+</header>
+
+<router-outlet></router-outlet>

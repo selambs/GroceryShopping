@@ -1,0 +1,587 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Shopping App",
+        "description": "My Final Project Application API",
+        "license": {
+            "name": "SELAMAWIT SHIBRU"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "Farmers",
+            "description": "API for users in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/farmer/signup": {
+            "post": {
+                "tags": [
+                    "add farmers"
+                ],
+                "description": "Create new user in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "description": "Farmer that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New user is created",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/signin": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "description": "Login to in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "description": "Farmer that we want to login to the account",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is logged in!",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/products": {
+            "post": {
+                "tags": [
+                    "Add products"
+                ],
+                "summary": "Add products in system of a specific farmer",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/product": {
+            "get": {
+                "tags": [
+                    "get all products"
+                ],
+                "summary": "Get all products of a specific farmer in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/product/{id}": {
+            "put": {
+                "tags": [
+                    "edit product"
+                ],
+                "summary": "Edit products of a specific farmer in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/resetpassword": {
+            "put": {
+                "tags": [
+                    "reset password"
+                ],
+                "summary": "Reset password of a specific farmer in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/signup": {
+            "post": {
+                "tags": [
+                    "Add customers"
+                ],
+                "description": "Create new user in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "description": "Customer that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New user is created",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/signin": {
+            "post": {
+                "tags": [
+                    "Login customers"
+                ],
+                "description": "Login user in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "description": "Customer that we want to login",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Customer is logged in!",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/farmers": {
+            "get": {
+                "tags": [
+                    "get all farmers"
+                ],
+                "summary": "Get all farmer in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "customer/farmers/{id}": {
+            "post": {
+                "tags": [
+                    "Rate farmer"
+                ],
+                "summary": "Rate a specific farmer in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/farmerss": {
+            "post": {
+                "tags": [
+                    "Add to cart"
+                ],
+                "summary": "Add to card of a specific farmer product",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer": {
+            "get": {
+                "tags": [
+                    "Display cart"
+                ],
+                "summary": "Get all products in user cart.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/farmer/products/{prodId}": {
+            "delete": {
+                "summary": "Delete product from cart with given ID",
+                "tags": [
+                    "Delete products"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Products deleted from cart",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/": {
+            "post": {
+                "tags": [
+                    "Clear cart"
+                ],
+                "summary": "Clear cart of a specific customer",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/orderhistory": {
+            "get": {
+                "tags": [
+                    "Get order history"
+                ],
+                "summary": "Get order history.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/order": {
+            "post": {
+                "tags": [
+                    "Place Order"
+                ],
+                "summary": "Place an order from customer",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/orders": {
+            "get": {
+                "tags": [
+                    "Get orders"
+                ],
+                "summary": "Get orders.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/orderList"
+                        }
+                    }
+                }
+            }
+        },
+        "/farmer/orders/{orderid}": {
+            "put": {
+                "tags": [
+                    "Update status"
+                ],
+                "summary": "Update order status",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/superuser": {
+            "get": {
+                "tags": [
+                    "Get users"
+                ],
+                "summary": "Get all farmers and customers registered in the system.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/superuser/user/{id}": {
+            "put": {
+                "tags": [
+                    "Account management"
+                ],
+                "summary": "Reset user password",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        },
+        "/superuser/users/{id}": {
+            "put": {
+                "tags": [
+                    "Account management"
+                ],
+                "summary": "Activate/deactivate user account",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/farmer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "farmer": {
+            "required": [
+                "_id",
+                "companyname",
+                "owner",
+                "email",
+                "password",
+                "logo",
+                "address",
+                "itemName",
+                "image",
+                "price",
+                "inventory",
+                "detail",
+                "active",
+                "rate"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "companyname": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "active": {
+                    "type": "string"
+                },
+                "rate": {
+                    "type": "number"
+                },
+                "products": {
+                    "type": "object",
+                    "item name": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "inventory": {
+                        "type": "number"
+                    },
+                    "detail": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "customer": {
+            "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "productId",
+                "itemName",
+                "image",
+                "detail",
+                "price",
+                "inventory"
+            ],
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "active": {
+                    "type": "string"
+                },
+                "cart": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "productId": {
+                            "type": "string"
+                        },
+                        "itemName": {
+                            "type": "string"
+                        },
+                        "image": {
+                            "type": "string"
+                        },
+                        "detail": {
+                            "type": "string"
+                        },
+                        "price": {
+                            "type": "number"
+                        },
+                        "inventory": {
+                            "type": "number"
+                        },
+                        "quantity": {
+                            "type": "number"
+                        }
+                    },
+                    "totalPrice": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "orderList": {
+            "required": [
+                "farmerId",
+                "customerId",
+                "productId",
+                "itemName",
+                "image"
+            ],
+            "properties": {
+                "farmerId": {
+                    "type": "string"
+                },
+                "customerId": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "string"
+                },
+                "orderStatus": {
+                    "type": "object",
+                    "productId": {
+                        "type": "string"
+                    },
+                    "itemName": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    }
+                },
+                "time": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

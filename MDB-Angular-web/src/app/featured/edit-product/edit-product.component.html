@@ -1,0 +1,85 @@
+<div class="editproduct">
+  <div class="col-md-10 mx-auto my-5">
+    <section class="form-elegant">
+      <mdb-card class="text-center mb-3">
+        <mdb-card-body class="mx-4">
+          <!--Header-->
+          <div class="text-center">
+            <h3 class="dark-grey-text mb-5">
+              <strong>Edit Product</strong>
+            </h3>
+          </div>
+
+          <!-- Default form contact -->
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <!-- Product Name -->
+            <input
+              type="text"
+              id="productName"
+              class="form-control mb-4"
+              placeholder="Product Name"
+              formControlName="itemName"
+            />
+
+            <!-- Image -->
+            <div>
+              <input
+                type="text"
+                id="image"
+                class="form-control mb-4"
+                placeholder="Image"
+                formControlName="image"
+              />
+            </div>
+
+            <!-- Price -->
+            <div>
+              <input
+                type="text"
+                id="price"
+                class="form-control mb-4"
+                placeholder="Price"
+                formControlName="price"
+              />
+            </div>
+
+           
+            <!-- Inventory-->
+            <input
+              type="text"
+              id="inventory"
+              class="form-control mb-4"
+              placeholder="Inventory"
+              formControlName="inventory"
+            />
+
+            <!-- Detail -->
+            <div class="form-group">
+              <textarea
+                class="form-control rounded-0"
+                id="detail"
+                rows="3"
+                placeholder="Detail"
+                formControlName="detail"
+              ></textarea>
+            </div>
+
+            <!-- Send button -->
+            <div>
+              <button
+                mdbBtn
+                type="submit"
+                color="teal"
+                block="true"
+                rounded="true"
+                class="z-depth-1 waves-light"
+              >
+                Edit
+              </button>
+            </div>
+          </form>
+        </mdb-card-body>
+      </mdb-card>
+    </section>
+  </div>
+</div>

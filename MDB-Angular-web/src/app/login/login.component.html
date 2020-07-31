@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-5 mx-auto my-5">
+    <section class="form-elegant opct opacity-80">
+      <mdb-card>
+        <mdb-card-body class="mx-4">
+          <!--Header-->
+
+          <div class="text-center">
+            <h3 class="dark-grey-text mb-5">
+              <strong>Sign in</strong>
+            </h3>
+          </div>
+          <span class="text-center">
+            {{ errorMessege }}
+          </span>
+
+          <form [formGroup]="elegantForm" (ngSubmit)="onSubmit()">
+            <div class="md-form">
+              <input
+                type="text"
+                id="elegantFormEmailEx"
+                class="form-control"
+                formControlName="email"
+                mdbInput
+              />
+              <label for="elegantFormEmailEx">Your email</label>
+            </div>
+
+            <div class="md-form pb-3">
+              <input
+                type="password"
+                id="elegantFormPasswordEx"
+                formControlName="password"
+                class="form-control"
+                mdbInput
+              />
+              <label for="elegantFormPasswordEx">Your password</label>
+              <p class="font-small blue-text d-flex justify-content-end">
+                Forgot
+                <a
+                  [routerLink]="['api', 'forgetpassword']"
+                  class="blue-text ml-1"
+                >
+                  Password?</a
+                >
+              </p>
+            </div>
+
+            <!--Body-->
+
+            <div class="text-center mb-3">
+              <button
+                type="submit"
+                mdbBtn
+                gradient="blue"
+                block="true"
+                rounded="true"
+                class="z-depth-1a waves-light"
+                mdbWavesEffect
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+        </mdb-card-body>
+        <!--Footer-->
+        <div class="modal-footer mx-5 pt-3 mb-1">
+          <p class="font-small dark-grey-text d-flex justify-content-end">
+            Not a member?
+            <a
+              [routerLink]="['api', 'farmer', 'signup']"
+              class="blue-text ml-1"
+            >
+              Sign Up</a
+            >
+          </p>
+        </div>
+      </mdb-card>
+    </section>
+  </div>
+</div>
